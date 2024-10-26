@@ -1,6 +1,6 @@
 <?php
 
-require_once "../core/cylinder.php";
+require_once "../../core/cylinder.php";
 $val = $_POST['vals'];
 $cylinder = new cylinder();
 
