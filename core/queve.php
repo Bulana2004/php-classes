@@ -11,14 +11,20 @@ var $arr = [];
 
     function push($val){
         array_push($this->arr , $val);
-        print_r($this->arr);
     }
 
-    function pop($val){
+    function pop(){
         array_pop($this->arr);
+    }
+
+    function arrshow(){
+        print_r($this->arr);
     }
 
 }
 
 $class = new queve(54);
 $class->push(43);
+$class->push(52);
+// $class->pop();
+$class->arrshow();
