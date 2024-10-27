@@ -39,6 +39,11 @@ var $arr = [];
         return count($this->arr);
     }
 
+    // Return Array as string
+    function arrayAsString(){
+        return $this->isEmpty() ? null : implode("," , $this->arr);
+    }
+
     // Clear all elements in the queve
     function clear(){
         $this->arr = [];
@@ -58,7 +63,10 @@ $top = $class->top();
 echo "Last Element in the Queve : " . $top . "\n";
 
 $size = $class->size();
-echo "Size of the Queve : " . $size . "\n";
+echo "Size of the Queve : " . $size . "\n\n";
+
+$arrs = $class->arrayAsString();
+echo "Array as a string : " . $arrs . "\n\n";
 
 $class->clear();
 $size = $class->size();
