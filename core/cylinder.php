@@ -25,7 +25,8 @@ var $arr = [
     function volume(){
         $r = $this->arr['r'];
         $h = $this->arr['h'];
-        return number_format(M_PI * $r * $r * $h , 2);
+        $v = number_format(M_PI * $r * $r * $h , 2);
+        return $v;
     }
 
 }

@@ -16,7 +16,7 @@
                     <div class="form-items">
                         <h3>Calculate the Volume of a Cylinder</h3>
                         <!-- <p>Fill in the data below.</p> -->
-                        <form class="requires-validation" id="form">
+                        <form class="requires-validation" id="form-calculate">
 
                             <div class="col-md-12 mt-3">
                                <input class="form-control" type="number" placeholder="Radius" required>
@@ -29,9 +29,9 @@
                             <div class="form-button mt-3">
                                 <button id="submit" type="submit" class="btn btn-primary">Calculate</button>
                             </div>
-
-                            <!-- MOdal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        </form>
+                        <!-- MOdal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                 <div class="modal-header">
@@ -46,8 +46,21 @@
                                 </div>
                                 </div>
                             </div>
+                        </div>
+                        <!-- End of Modal -->
+                        <form action="" id="form-WaterLevel">
+                            <h4 class="mt-5">Volume of Water</h4>
+
+                            <div class="col-md-12 mt-3">
+                               <div class="row">
+                                <div class="col-8">
+                                    <input class="form-control" type="number" placeholder="Water Level Height" required>
+                                </div>
+                                <div class="col-3">
+                                    <button type="submit" class="btn btn-secondary">OK</button>
+                                </div>
+                               </div>
                             </div>
-                            <!-- End of Modal -->
                         </form>
                     </div>
                 </div>
@@ -62,7 +75,7 @@
 
 <script>
     $(document).ready(function(){
-        $("#form").submit(function(e){
+        $("#form-calculate").submit(function(e){
             e.preventDefault();
             var vals = $('input').map(function(){
                 return $(this).val()
