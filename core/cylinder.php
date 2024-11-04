@@ -29,4 +29,18 @@ var $arr = [
         return $v;
     }
 
+    function waterVolume($n){
+        $r = $this->arr['r'];
+        $waterHeight = $n;
+        
+        $waterVolume = number_format(M_PI * $r*$r * $waterHeight , 2);
+        return $waterVolume;
+    }
+
 }
+
+// $class = new cylinder();
+// $class->radius(12);
+// $class->height(24);
+// echo "Volume is : " . $class->volume();
+// $class->waterVolume();

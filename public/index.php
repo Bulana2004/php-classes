@@ -53,11 +53,14 @@
 
                             <div class="col-md-12 mt-3">
                                <div class="row">
-                                <div class="col-8">
-                                    <input class="form-control" type="number" placeholder="Water Level Height" required>
+                                <div class="col-7">
+                                    <input id="waterHeight" class="form-control" type="number" placeholder="Water Level Height" required>
+                                </div>
+                                <div class="col-2">
+                                    <button type="submit" class="btn btn-secondary form-control">OK</button>
                                 </div>
                                 <div class="col-3">
-                                    <button type="submit" class="btn btn-secondary">OK</button>
+                                    <button type="button" onclick="refresh1()" class="btn btn-secondary form-control">Refresh</button>
                                 </div>
                                </div>
                             </div>
@@ -91,9 +94,26 @@
                 }
             })
         })
+
+        $("#form-WaterLevel").submit(function(e){
+            e.preventDefault();
+            var val = $('input').map(function(){
+                return $(this).val()
+            }).get();
+
+            $.ajax({
+                type:'post',
+                data:{val : val},
+                url:'./php/waterlevel.php',
+                success:function(responce){
+                    $("#exampleModal").modal('show');
+                    $("#output").html(responce);
+                }
+            })
+        })
     })
 
-    function refresh(){
+    function refresh1(){
         location.reload();
     }
 </script>
